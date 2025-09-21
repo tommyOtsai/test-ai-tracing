@@ -21,18 +21,6 @@ export const mastra = new Mastra({
     name: 'Mastra',
     level: 'info',
   }),
-  telemetry: {
-    serviceName: "ai",
-    enabled: true,
-    sampling: { type: "always_on" },
-    export: {
-      type: "otlp",
-      endpoint: 'https://cloud.langfuse.com/api/public/otel/v1/traces', // or your preferred endpoint
-      headers: {
-        Authorization: `Basic ${process.env.LANGFUSE_BASIC_AUTH_STRING}`, // Your base64-encoded auth string
-      },
-    },
-  },
   observability: {
     configs: {
       langfuse: {
@@ -47,7 +35,6 @@ export const mastra = new Mastra({
           }),
           new CloudExporter({
           accessToken: process.env.MASTRA_CLOUD_ACCESS_TOKEN, // Required (but can be pulled directly from the environment)
-          endpoint: 'https://api.mastra.ai/ai/spans/publish', // Optional custom endpoint
           maxBatchSize: 1000,    // Maximum spans per batch
           maxBatchWaitMs: 5000,  // Maximum wait time before flushing
         })
