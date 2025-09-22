@@ -7,6 +7,7 @@ import { weatherAgent } from './agents/weather-agent';
 import dotenv from 'dotenv';
 import { CloudExporter, SamplingStrategyType } from '@mastra/core/ai-tracing';
 import { LangfuseExporter } from '@mastra/langfuse';
+import { weatherTool } from './tools/weather-tool';
  
 dotenv.config();
 
@@ -21,6 +22,7 @@ export const mastra = new Mastra({
     name: 'Mastra',
     level: 'info',
   }),
+
   observability: {
     configs: {
       langfuse: {

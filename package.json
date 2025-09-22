@@ -25,7 +25,6 @@
     "@mastra/libsql": "^0.14.2",
     "@mastra/loggers": "^0.10.12",
     "@mastra/memory": "^0.15.2",
-    "ai": "^5.0.48",
     "dotenv": "^17.2.2",
     "langfuse-vercel": "^3.38.5",
     "zod": "^3.25.76"
